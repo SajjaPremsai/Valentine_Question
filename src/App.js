@@ -4,8 +4,8 @@ import { useState } from "react";
 
 function App() {
   const [Yes,setYes] = useState(false)
-  const [count,setCount] = useState(0)
-  const [ButtonSize,setButtonSize] = useState(count * 16 + 23)
+  const [count,setCount] = useState(23)
+  const [ButtonSize,setButtonSize] = useState(count * 8 + 3)
 
   const Text = [
     "No",
