@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SajjaPremsai/Valentine_Question/static/css/main.b7e23f65.css",
+    "main.js": "/SajjaPremsai/Valentine_Question/static/js/main.ea4a6bef.js",
+    "static/js/592.14330dac.chunk.js": "/SajjaPremsai/Valentine_Question/static/js/592.14330dac.chunk.js",
+    "index.html": "/SajjaPremsai/Valentine_Question/index.html",
+    "main.b7e23f65.css.map": "/SajjaPremsai/Valentine_Question/static/css/main.b7e23f65.css.map",
+    "main.ea4a6bef.js.map": "/SajjaPremsai/Valentine_Question/static/js/main.ea4a6bef.js.map",
+    "592.14330dac.chunk.js.map": "/SajjaPremsai/Valentine_Question/static/js/592.14330dac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7e23f65.css",
+    "static/js/main.ea4a6bef.js"
+  ]
+}
