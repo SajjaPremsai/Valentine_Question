@@ -1,6 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
 import { useState } from "react";
+import myimg from "./assets/myimg.png"
+import GitHubButton from "./components/GitHubButton";
 
 function App() {
   const [Yes,setYes] = useState(false)
@@ -193,6 +195,7 @@ function App() {
             <h1>Ok yay!!!</h1>
             <span style={{ marginBottom: "50px" }}>
             </span>
+            <GitHubButton username={"SajjaPremsai"}  image={myimg}/>
           </>
         ):(
           <>
@@ -206,6 +209,9 @@ function App() {
                 <button className="btn btn-danger" 
                 style={{fontSize:"23px"}}
                 onClick={() => HandleNo()}>{Text[GetPhrase()]}</button>
+            </div>
+            <div className="tagger">
+            <GitHubButton username={"SajjaPremsai"}  image={myimg}/>
             </div>
           </>
         )
