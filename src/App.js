@@ -1,13 +1,13 @@
-import "bootstrap/dist/css/bootstrap.min.css"
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import { useState } from "react";
-import myimg from "./assets/myimg.png"
-import GitHubButton from "./components/GitHubButton";
+import myimg from "./assets/myimg.png"; // Ensure this path is correct
+import GitHubButton from "./components/GitHubButton"; // Ensure the component exists
+import HeartButton from "./components/HeartButton";
 
 function App() {
-  const [Yes,setYes] = useState(false)
-  const [count,setCount] = useState(23)
-  const [ButtonSize,setButtonSize] = useState(count * 8 + 3)
+  const [Yes, setYes] = useState(false);
+  const [count, setCount] = useState(0);
 
   const Text = [
     "No",
@@ -176,48 +176,68 @@ function App() {
     "Need a bit more time?"
   ];
 
+  const HandleNo = () => {
+    setCount((prevCount) => (prevCount < Text.length - 1 ? prevCount + 1 : 0));
+  };
 
-  function HandleNo(){
-    setCount(count + 1)
-    setButtonSize(count * 16 + 23)
-  }
-
-  function GetPhrase(){
-    return Math.min(count,Text.length-1)
-  }
+  const ButtonSize = 20 + count * 2;
 
   return (
-    <div className="ValentineContainer">
-      {
-        Yes ? (
-          <>
-            <img src="https://media1.tenor.com/m/gUiu1zyxfzYAAAAC/bear-kiss-bear-kisses.gif" width={220} height={200} alt="" />
-            <h1>Ok yay!!!</h1>
-            <span style={{ marginBottom: "50px" }}>
-            </span>
-            <div className="tagger">
-            <GitHubButton username={"SajjaPremsai"}  image={myimg}/>
+    <div className="ValentineContainer text-center">
+      {Yes ? (
+        <>
+          <img
+            src="https://media1.tenor.com/m/gUiu1zyxfzYAAAAC/bear-kiss-bear-kisses.gif"
+            width={220}
+            height={200}
+            alt="Yay!"
+          />
+          <h1 className="mt-3">Yay!!! ❤️</h1>
+          <div className="tagger mt-4">
+            <GitHubButton username={"SajjaPremsai"} image={myimg} />
+          </div>
+        </>
+      ) : (
+        <>
+          <img
+            src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"
+            width={220}
+            height={200}
+            alt="Will you be my Valentine?"
+          />
+          <h1 className="mt-4">Will you be my Valentine?</h1>
+          <div className="ButtonContainer mt-3">
+            <button
+              className="btn btn-success m-3"
+              onClick={() => setYes(true)}
+              style={{
+                fontSize: `${ButtonSize}px`,
+                padding: "10px 20px",
+                transition: "all 0.3s ease-in-out",
+              }}
+            >
+              Yes
+            </button>
+            <button
+              className="btn btn-danger"
+              onClick={HandleNo}
+              style={{
+                fontSize: "18px",
+                padding: "10px 20px",
+                transition: "all 0.3s ease-in-out",
+              }}
+            >
+              {Text[count]}
+            </button>
+          </div>
+          <div className="tagger mt-4" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "15px" }}>
+            <div style={{ paddingTop: "30px" }}>
+              <HeartButton />
             </div>
-          </>
-        ):(
-          <>
-              <img src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif" width={220} height={200} />
-            <h1>Will you be my Valentine?</h1>
-            <div className="ButtonContainer">
-              <button className="btn btn-success m-4" 
-              onClick={()=>setYes(true)}
-              style={{fontSize:ButtonSize}}
-              >Yes</button>
-                <button className="btn btn-danger" 
-                style={{fontSize:"23px"}}
-                onClick={() => HandleNo()}>{Text[GetPhrase()]}</button>
-            </div>
-            <div className="tagger">
-            <GitHubButton username={"SajjaPremsai"}  image={myimg}/>
-            </div>
-          </>
-        )
-      }
+            <GitHubButton username={"SajjaPremsai"} image={myimg} />
+          </div>
+        </>
+      )}
     </div>
   );
 }

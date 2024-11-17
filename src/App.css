@@ -3,15 +3,58 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  min-height: 100vh;
+  background-color: #f8f9fa; /* Light background */
+  padding: 20px;
+  text-align: center;
 }
 
-.ButtonContainer{
-
+.ButtonContainer {
+  display: flex; /* Flexbox layout for buttons */
+  gap: 20px; /* Space between buttons */
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Align buttons vertically */
+  margin-top: 20px; /* Space above the button group */
 }
 
-.tagger{
-  width: 80%;
+.ButtonContainer button {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px; /* Ensure consistent padding */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ButtonContainer button:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Elevated shadow on hover */
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+@media (max-width: 768px) {
+  .ButtonContainer {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    gap: 10px; /* Reduce gap for smaller viewports */
+  }
+
+  .ButtonContainer button {
+    font-size: 16px !important;
+    padding: 8px 16px !important; /* Adjust padding for mobile */
+  }
+
+  img {
+    width: 180px; /* Adjust image width for mobile */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+.tagger {
+  width: 80%; /* Adjusted width for the tagger container */
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row-reverse; /* Arrange elements in reverse row order */
+  justify-content: flex-start; /* Align items to the left by default */
 }
