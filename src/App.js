@@ -193,7 +193,10 @@ function App() {
             alt="Yay!"
           />
           <h1 className="mt-3">Yay!!! ❤️</h1>
-          <div className="tagger mt-4">
+          <div className="tagger mt-4" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "15px" }}>
+            <div style={{ paddingTop: "30px" }}>
+              <HeartButton />
+            </div>
             <GitHubButton username={"SajjaPremsai"} image={myimg} />
           </div>
         </>
