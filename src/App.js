@@ -195,7 +195,9 @@ function App() {
             <h1>Ok yay!!!</h1>
             <span style={{ marginBottom: "50px" }}>
             </span>
+            <div className="tagger">
             <GitHubButton username={"SajjaPremsai"}  image={myimg}/>
+            </div>
           </>
         ):(
           <>
